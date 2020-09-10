@@ -12,8 +12,8 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # YOUR CODE HERE
 
 with open('foo.txt') as f:
-        foo = f.read()
-        print(foo)
+    foo = f.read()
+    print(foo)
 
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
@@ -24,8 +24,7 @@ with open('foo.txt') as f:
 # YOUR CODE HERE
 
 with open('bar.txt', 'w') as f:
-	f.write("""this is my text, hopefully this works,
-		what else could go wrong?""")
+	f.write("""Text in the file""")
 
 with open('bar.txt') as f:
 	print(f.read())

@@ -35,20 +35,26 @@ args = sys.argv
 
 l = len(args)
 
+month = sys.argv[1]
+year = sys.argv[2]
+
+user_list = [month, year]
+print(user_list)
+
 if l == 1:
 	month = datetime.now().month
 	year = datetime.now().year
 
 elif l == 2:
 	month = int(args[1])
-	year = datetime.now.year
+	year = datetime.now().year
 
 elif l == 3:
 	month = int(args[1])
 	year = int(args[2])
 
 else:
-	print('Does not compute.')
+	print('Please enter a valid input')
 
 cal = calendar.TextCalendar()
 cal.prmonth(year, month)
