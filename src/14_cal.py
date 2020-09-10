@@ -31,30 +31,18 @@ import sys
 import calendar
 from datetime import datetime
 
-args = sys.argv
+args = [sys.argv[i] for i in list(range(len(sys.argv)))][1:]
 
-l = len(args)
+today = datetime.today()
+year = today.year
+month = today.month
 
-month = sys.argv[1]
-year = sys.argv[2]
-
-user_list = [month, year]
-print(user_list)
-
-if l == 1:
-	month = datetime.now().month
-	year = datetime.now().year
-
-elif l == 2:
-	month = int(args[1])
-	year = datetime.now().year
-
-elif l == 3:
-	month = int(args[1])
-	year = int(args[2])
-
-else:
-	print('Please enter a valid input')
-
-cal = calendar.TextCalendar()
-cal.prmonth(year, month)
+if __name__ == "__main__":
+  if len(args) == 0:
+    print(calendar.month(year, month))
+  elif (len(args) == 1) and (len(args[0]) <= 2):
+    print(calendar.month(year, int(args[0])))
+  elif len(args[1]) != 4:
+    print("Error: Please enter date as in 'python 14_cal.py (mm) (yyyy)'")
+  else:
+    print(calendar.month(int(args[1]), int(args[0])))
